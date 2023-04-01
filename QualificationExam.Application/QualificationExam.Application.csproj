@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <Folder Include="MappingProfiles\" />
+    <Folder Include="Features\" />
   </ItemGroup>
 
   <ItemGroup>

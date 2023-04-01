@@ -9,3 +9,5 @@ global using System.Reflection;
 global using Microsoft.EntityFrameworkCore;
 global using QualificationExam.Domain.Enitities;
 global using System.Linq.Expressions;
+global using QualificationExam.Application.Behaviors;
+global using Microsoft.Extensions.Logging;

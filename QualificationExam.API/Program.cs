@@ -1,6 +1,5 @@
-using Microsoft.Extensions.Configuration;
 using QualificationExam.API;
-using QualificationExam.Domain.Options;
+using QualificationExam.Application.Configurators;
 using QualificationExam.Identity.Configurators;
 using QualificationExam.Infrastructure;
 
@@ -17,6 +16,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddControllers();
 builder.Services.AddSwaggerGen();
 builder.Services.ConfigureInfrastructureServices(builder.Configuration);
+builder.Services.AddApplicationServices();
 
 var app = builder.Build();
 await SeedData.SeedAsync(app);

@@ -6,6 +6,8 @@
         {
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
             services.AddMediatR(Assembly.GetExecutingAssembly());
+            services.AddScoped(typeof(IPipelineBehavior<,>),
+                typeof(LoggingPipeLineBehavior<,>));
             return services;
         }
     }

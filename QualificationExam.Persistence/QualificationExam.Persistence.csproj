@@ -11,7 +11,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\QualificationExam.Application\QualificationExam.Application.csproj" />
     <ProjectReference Include="..\QualificationExam.Domain\QualificationExam.Domain.csproj" />
+    <ProjectReference Include="..\QualificationExam.Infrastructure\QualificationExam.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

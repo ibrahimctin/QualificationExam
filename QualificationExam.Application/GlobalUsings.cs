@@ -6,3 +6,6 @@ global using QualificationExam.Application.DTOs.Identity.RequestDtos;
 global using MediatR;
 global using Microsoft.Extensions.DependencyInjection;
 global using System.Reflection;
+global using Microsoft.EntityFrameworkCore;
+global using QualificationExam.Domain.Enitities;
+global using System.Linq.Expressions;

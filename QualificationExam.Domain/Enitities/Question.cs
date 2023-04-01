@@ -1,8 +1,6 @@
-﻿
-
-namespace QualificationExam.Domain.Enitities
+﻿namespace QualificationExam.Domain.Enitities
 {
-    public class Question
+    public class Question:BaseEntity
     {
         public string Title { get; set; }
         public string Content { get; set; }

@@ -1,7 +1,7 @@
 ﻿
 namespace QualificationExam.Domain.Enitities
 {
-    public class Quiz
+    public class Quiz:BaseEntity
     {
         public string Title { get; set; }
         public string Description { get; set; }

@@ -1,6 +1,6 @@
 ﻿namespace QualificationExam.Domain.Enitities
 {
-    public class QuestionOption
+    public class QuestionOption:BaseEntity
     {
       
         public string Content { get; set; }

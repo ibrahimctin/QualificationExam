@@ -7,7 +7,11 @@
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
             services.AddMediatR(Assembly.GetExecutingAssembly());
             services.AddScoped(typeof(IPipelineBehavior<,>),
-                typeof(LoggingPipeLineBehavior<,>));
+               typeof(LoggingPipeLineBehavior<,>));
+            services.AddScoped(typeof(IRequestExceptionHandler<,,>),
+               typeof(ExceptionHandlingBehavior<,,>));
+            services.AddScoped(typeof(IPipelineBehavior<,>),
+               typeof(ValidationPipeLineBehavior<,>));
             return services;
         }
     }

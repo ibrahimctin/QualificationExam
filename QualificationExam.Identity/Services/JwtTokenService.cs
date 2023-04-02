@@ -1,4 +1,6 @@
-﻿namespace QualificationExam.Identity.Services
+﻿using QualificationExam.Domain.Constants.ResponseMessages;
+
+namespace QualificationExam.Identity.Services
 {
     public class JwtTokenService : IJwtTokenService
     {

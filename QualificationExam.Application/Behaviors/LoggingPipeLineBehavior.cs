@@ -3,7 +3,7 @@
     public class LoggingPipeLineBehavior<TRequest, TResponse>
         : IPipelineBehavior<TRequest, TResponse>
         where TRequest  : notnull , IRequest<TResponse>
-        where TResponse : notnull
+        where TResponse : ServiceResponse
     {
         private readonly ILogger<LoggingPipeLineBehavior<TRequest, TResponse>> _logger;
 
@@ -26,7 +26,7 @@
 
             var result = await next();
 
-            if (result is null)
+            if (result.Success is false)
             {
                 _logger.LogError(
                     "Request failure {@RequestName}, {@Error}, {@DateTimeUtc}",

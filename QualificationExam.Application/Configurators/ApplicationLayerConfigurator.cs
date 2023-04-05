@@ -12,6 +12,7 @@
                typeof(ExceptionHandlingBehavior<,,>));
             services.AddScoped(typeof(IPipelineBehavior<,>),
                typeof(ValidationPipeLineBehavior<,>));
+            services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
             return services;
         }
     }

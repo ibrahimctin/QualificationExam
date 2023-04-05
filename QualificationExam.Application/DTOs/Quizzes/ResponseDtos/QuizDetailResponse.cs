@@ -1,14 +1,11 @@
-﻿
-namespace QualificationExam.Domain.Enitities
+﻿namespace QualificationExam.Application.DTOs.Quizzes.ResponseDtos
 {
-    public class Quiz:BaseEntity
+    public class QuizDetailResponse
     {
+        public string Id { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
         public int QuestionCount { get; set; }
-        public ICollection<Question> Questions { get; set; }
-        public AppUser User { get; set; }
         public string UserId { get; set; }
-
     }
 }

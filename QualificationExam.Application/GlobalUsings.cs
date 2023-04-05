@@ -18,3 +18,9 @@ global using FluentValidation;
 global using FluentValidation.Results;
 global using MediatR.Pipeline;
 global using System.Text.Json;
+global using AutoMapper;
+global using QualificationExam.Application.Contracts.Persistence.Quizzes;
+global using QualificationExam.Application.DTOs.Quizzes.RequestDtos;
+global using QualificationExam.Application.Contracts.Identity;
+global using QualificationExam.Application.DTOs.Quizzes.ResponseDtos;
+

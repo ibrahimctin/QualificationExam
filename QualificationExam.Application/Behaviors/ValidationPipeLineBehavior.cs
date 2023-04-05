@@ -3,7 +3,7 @@
     public class ValidationPipeLineBehavior<TRequest, TResponse>
         : IPipelineBehavior<TRequest, TResponse>
         where TRequest : IRequest<TResponse>
-        where TResponse : ServiceResponse, new()
+        where TResponse : class, new()
     {
 
         private readonly IEnumerable<IValidator<TRequest>> _validators;

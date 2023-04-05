@@ -7,4 +7,7 @@ global using Microsoft.EntityFrameworkCore.ChangeTracking;
 global using QualificationExam.Application.Contracts.Persistence.Questions;
 global using QualificationExam.Application.Contracts.Persistence.QuestionOptions;
 global using QualificationExam.Application.Contracts.Persistence.Quizzes;
+global using Microsoft.Extensions.DependencyInjection;
+global using QualificationExam.Persistence.Repositories;
+global using QualificationExam.Persistence.Repositories.Quizzes;
 

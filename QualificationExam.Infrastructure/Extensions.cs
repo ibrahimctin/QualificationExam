@@ -7,6 +7,8 @@
             services.AddDbContext<AppDbContext>(options =>
                options.UseSqlServer(
                    configuration.GetConnectionString("ExamConnectionString")));
+
+            services.AddDbContext<AppDbContext>();
             return services;
         }
     }

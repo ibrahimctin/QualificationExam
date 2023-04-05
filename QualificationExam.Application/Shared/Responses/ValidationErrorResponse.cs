@@ -1,6 +1,6 @@
 ﻿namespace QualificationExam.Application.Shared.Responses
 {
-    internal class ValidationErrorResponse:ServiceResponse
+    public class ValidationErrorResponse:ServiceResponse
     {
         public List<ValidationError> Errors { get; set; }
 

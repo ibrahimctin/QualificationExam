@@ -75,9 +75,11 @@ namespace QualificationExam.Infrastructure.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
                     b.Property<string>("LoginProvider")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("ProviderKey")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("ProviderDisplayName")
@@ -97,12 +99,15 @@ namespace QualificationExam.Infrastructure.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
                     b.Property<string>("UserId")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("LoginProvider")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Name")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Value")
@@ -116,6 +121,7 @@ namespace QualificationExam.Infrastructure.Migrations
             modelBuilder.Entity("QualificationExam.Domain.Enitities.Identity.AppRole", b =>
                 {
                     b.Property<string>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("ConcurrencyStamp")
@@ -143,6 +149,7 @@ namespace QualificationExam.Infrastructure.Migrations
             modelBuilder.Entity("QualificationExam.Domain.Enitities.Identity.AppUser", b =>
                 {
                     b.Property<string>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<int>("AccessFailedCount")
@@ -211,9 +218,11 @@ namespace QualificationExam.Infrastructure.Migrations
             modelBuilder.Entity("QualificationExam.Domain.Enitities.Identity.AppUserRole", b =>
                 {
                     b.Property<string>("UserId")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("RoleId")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("UserId", "RoleId");
@@ -226,6 +235,7 @@ namespace QualificationExam.Infrastructure.Migrations
             modelBuilder.Entity("QualificationExam.Domain.Enitities.Identity.RefreshToken", b =>
                 {
                     b.Property<string>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("AppUserId")
@@ -262,6 +272,7 @@ namespace QualificationExam.Infrastructure.Migrations
             modelBuilder.Entity("QualificationExam.Domain.Enitities.Question", b =>
                 {
                     b.Property<string>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Content")
@@ -286,6 +297,7 @@ namespace QualificationExam.Infrastructure.Migrations
             modelBuilder.Entity("QualificationExam.Domain.Enitities.QuestionOption", b =>
                 {
                     b.Property<string>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Content")
@@ -309,6 +321,7 @@ namespace QualificationExam.Infrastructure.Migrations
             modelBuilder.Entity("QualificationExam.Domain.Enitities.Quiz", b =>
                 {
                     b.Property<string>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Description")
@@ -322,7 +335,13 @@ namespace QualificationExam.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("Quizzes");
                 });
@@ -409,6 +428,17 @@ namespace QualificationExam.Infrastructure.Migrations
                         .IsRequired();
 
                     b.Navigation("Question");
+                });
+
+            modelBuilder.Entity("QualificationExam.Domain.Enitities.Quiz", b =>
+                {
+                    b.HasOne("QualificationExam.Domain.Enitities.Identity.AppUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("QualificationExam.Domain.Enitities.Identity.AppRole", b =>

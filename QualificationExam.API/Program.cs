@@ -2,6 +2,7 @@ using QualificationExam.API;
 using QualificationExam.Application.Configurators;
 using QualificationExam.Identity.Configurators;
 using QualificationExam.Infrastructure;
+using QualificationExam.Persistence;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +12,7 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.LoadIdentityConf();
 builder.Services.LoadIdentityServices();
+builder.Services.LoadPersistenceServices();
 builder.Services.AddJwt(builder.Configuration);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddControllers();
@@ -28,7 +30,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
+app.UseAuthentication();
 app.UseAuthorization();
 app.UseCookiePolicy();
 app.MapControllers();

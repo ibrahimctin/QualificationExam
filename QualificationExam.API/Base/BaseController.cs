@@ -1,8 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using QualificationExam.Application.Shared.Responses;
-using System.Net;
-
-namespace QualificationExam.API.Base
+﻿namespace QualificationExam.API.Base
 {
     [ApiController]
     [Route("api/[controller]")]

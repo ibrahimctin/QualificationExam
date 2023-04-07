@@ -2,36 +2,36 @@
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class QuizzesController : BaseController
+    public class QuestionsController : BaseController
     {
         private readonly IMediator _mediator;
 
-        public QuizzesController(IMediator mediator)
+        public QuestionsController(IMediator mediator)
         {
             _mediator = mediator;
         }
 
-        [HttpPost("CreateQuiz")]
+
+        [HttpPost("CreateQuestion")]
         [ProducesResponseType(typeof(ServiceResponse), (int)HttpStatusCode.BadRequest)]
         [ProducesResponseType((int)HttpStatusCode.InternalServerError)]
         [ProducesResponseType(typeof(ServiceResponse), (int)HttpStatusCode.OK)]
-        public async Task<IActionResult> CreateQuiz([FromBody] CreateQuizRequest request)
+        public async Task<IActionResult> CreateQuestion([FromBody] CreateQuestionRequest request)
         {
-            var command = new QuizCreateCommand { CreateQuizRequest = request };
+            var command = new QuestionCreateCommand { CreateQuestionRequest = request };
             var result = await _mediator.Send(command);
             return !result.Success
                 ? Error(result)
                 : Ok(result);
         }
 
-        
         [HttpGet("{id}")]
         [ProducesResponseType(typeof(ServiceResponse), (int)HttpStatusCode.BadRequest)]
         [ProducesResponseType(typeof(ServiceResponse), (int)HttpStatusCode.NotFound)]
         [ProducesResponseType(typeof(ServiceResponse), (int)HttpStatusCode.OK)]
         public async Task<IActionResult> Get(string id)
         {
-            var query = new GetQuizDetailQuery { QuizId = id};
+            var query = new GetQuestionDetailQuery { QuestionId = id };
             var result = await _mediator.Send(query);
 
             if (result is ValidationErrorResponse)
@@ -49,30 +49,31 @@
                 : Ok(result);
         }
 
-        [HttpPost("UpdateQuiz")]
+        [HttpPost("UpdateQuestion")]
         [ProducesResponseType(typeof(ServiceResponse), (int)HttpStatusCode.BadRequest)]
         [ProducesResponseType((int)HttpStatusCode.InternalServerError)]
         [ProducesResponseType(typeof(ServiceResponse), (int)HttpStatusCode.OK)]
-        public async Task<IActionResult> UpdateQuiz([FromBody] UpdateQuizRequest request)
+        public async Task<IActionResult> UpdateQuestion([FromBody] UpdateQuestionRequest request)
         {
-            var command = new QuizUpdateCommand { UpdateQuizRequest = request };
+            var command = new QuestionUpdateCommand { UpdateQuestionRequest = request };
             var result = await _mediator.Send(command);
             return !result.Success
                 ? Error(result)
                 : Ok(result);
         }
 
-        [HttpDelete("DeleteQuiz")]
+        [HttpDelete("DeleteQuestion")]
         [ProducesResponseType(typeof(ServiceResponse), (int)HttpStatusCode.BadRequest)]
         [ProducesResponseType((int)HttpStatusCode.InternalServerError)]
         [ProducesResponseType(typeof(ServiceResponse), (int)HttpStatusCode.OK)]
-        public async Task<IActionResult> DeleteQuiz(string Id)
+        public async Task<IActionResult> DeleteQuestion(string Id)
         {
-            var command = new QuizDeleteCommand { QuizId = Id };
+            var command = new QuestionDeleteCommand { QuestionId = Id };
             var result = await _mediator.Send(command);
             return !result.Success
                 ? Error(result)
                 : Ok(result);
         }
+
     }
 }

@@ -1,9 +1,3 @@
-using QualificationExam.API;
-using QualificationExam.Application.Configurators;
-using QualificationExam.Identity.Configurators;
-using QualificationExam.Infrastructure;
-using QualificationExam.Persistence;
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.

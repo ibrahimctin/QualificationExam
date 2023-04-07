@@ -12,7 +12,7 @@
   
                 if (request.QuizId is null)
                 {
-                    throw  new ApplicationExpetions(ResponseMessage.QuizNotFound);
+                    throw  new ApplicationLayerException(ResponseMessage.QuizNotFound);
                 } 
                 var deletedQuiz =  await _quizWriteRepository.RemoveAsync(request.QuizId);
                 await _quizWriteRepository.SaveAsync();

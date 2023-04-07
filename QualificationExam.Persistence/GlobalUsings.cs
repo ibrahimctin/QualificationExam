@@ -10,4 +10,4 @@ global using QualificationExam.Application.Contracts.Persistence.Quizzes;
 global using Microsoft.Extensions.DependencyInjection;
 global using QualificationExam.Persistence.Repositories;
 global using QualificationExam.Persistence.Repositories.Quizzes;
-
+global using QualificationExam.Persistence.Repositories.Questions;

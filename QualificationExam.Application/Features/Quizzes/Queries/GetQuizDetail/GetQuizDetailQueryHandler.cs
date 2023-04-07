@@ -13,7 +13,9 @@
 
         public async Task<ServiceResponse> Handle(GetQuizDetailQuery request, CancellationToken cancellationToken)
         {
-            var result = await _quizReadRepository.GetByIdAsync(request.QuizId);
+            var result = await _quizReadRepository. GetAsync(
+                x=>x.Id==request.QuizId 
+               ,includes:c=>c.Questions);
             if (result is not null)
             {
                 var resultPayload = _mapper.Map<QuizDetailResponse>(result);

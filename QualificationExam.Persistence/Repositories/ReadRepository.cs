@@ -15,11 +15,15 @@
             return filter == null ? query : query.Where(filter);
         }
 
-        public async Task<T> GetAsync(Expression<Func<T, bool>> filter, bool tracking = true)
+     
+
+        public async Task<T> GetAsync(Expression<Func<T, bool>> filter, bool tracking = true, params Expression<Func<T, object>>[] includes)
         {
             var query = Table.AsQueryable();
+            if (includes != null)
+                query = includes.Aggregate(query, (current, include) => current.Include(include));
             if (!tracking)
-                query.AsNoTracking();
+                query = query.AsNoTracking();
             return await query.FirstOrDefaultAsync(filter);
         }
 

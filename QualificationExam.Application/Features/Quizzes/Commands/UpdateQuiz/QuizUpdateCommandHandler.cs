@@ -6,7 +6,10 @@
         private readonly IQuizWriteRepository _quizWriteRepository;
         private readonly IQuizReadRepository _quizReadRepository;
 
-        public QuizUpdateCommandHandler(IMapper mapper, IQuizWriteRepository quizWriteRepository, IQuizReadRepository quizReadRepository)
+        public QuizUpdateCommandHandler(
+            IMapper mapper, 
+            IQuizWriteRepository quizWriteRepository, 
+            IQuizReadRepository quizReadRepository)
         {
             _mapper = mapper;
             _quizWriteRepository = quizWriteRepository;
@@ -18,7 +21,7 @@
             var quizResult = await _quizReadRepository.GetByIdAsync(request.UpdateQuizRequest.Id);
             if (quizResult is null)
             {
-                throw new ApplicationException(ResponseMessage.QuizNotFound);
+                throw new ApplicationLayerException(ResponseMessage.QuizNotFound);
             }
             var quizPayload = _mapper.Map(request.UpdateQuizRequest,quizResult);
             var updatedQuiz = _quizWriteRepository.Update(quizPayload);

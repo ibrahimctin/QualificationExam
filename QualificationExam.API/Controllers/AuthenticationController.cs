@@ -1,13 +1,4 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
-using QualificationExam.API.Base;
-using QualificationExam.Application.Contracts.Identity;
-using QualificationExam.Application.DTOs.Identity.RequestDtos;
-using QualificationExam.Application.DTOs.Identity.ResponseDtos;
-using QualificationExam.Domain.Constants;
-
-namespace QualificationExam.API.Controllers
+﻿namespace QualificationExam.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

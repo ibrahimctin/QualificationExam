@@ -6,7 +6,10 @@
         private readonly IMapper _mapper;
         private readonly ICurrentUserService _currentUserService;
 
-        public QuizCreateCommandHandler(IQuizWriteRepository quizWriteRepository, IMapper mapper, ICurrentUserService currentUserService)
+        public QuizCreateCommandHandler(
+            IQuizWriteRepository quizWriteRepository,
+            IMapper mapper, 
+            ICurrentUserService currentUserService)
         {
             _quizWriteRepository = quizWriteRepository;
             _mapper = mapper;

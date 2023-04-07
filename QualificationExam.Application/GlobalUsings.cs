@@ -23,4 +23,6 @@ global using QualificationExam.Application.Contracts.Persistence.Quizzes;
 global using QualificationExam.Application.DTOs.Quizzes.RequestDtos;
 global using QualificationExam.Application.Contracts.Identity;
 global using QualificationExam.Application.DTOs.Quizzes.ResponseDtos;
-
+global using QualificationExam.Application.DTOs.Questions.RequestDtos;
+global using QualificationExam.Application.Contracts.Persistence.Questions;
+global using QualificationExam.Application.DTOs.Questions.ResponseDtos;

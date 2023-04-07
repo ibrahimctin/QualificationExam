@@ -1,7 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using QualificationExam.Domain.Exceptions;
-
-namespace QualificationExam.API.Base
+﻿namespace QualificationExam.API.Base
 {
     public static class ApiResponseCreator
     {

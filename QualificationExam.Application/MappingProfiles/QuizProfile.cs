@@ -5,8 +5,10 @@
         public QuizProfile()
         {
            CreateMap<Quiz,CreateQuizRequest>().ReverseMap();
-           CreateMap<Quiz,QuizDetailResponse>().ReverseMap();
-           CreateMap<Quiz,UpdateQuizRequest>().ReverseMap();    
+            CreateMap<Quiz, QuizDetailResponse>()
+                .ForMember(dest => dest.questionDetails
+                , act => act.MapFrom(src => src.Questions));
+            CreateMap<Quiz, UpdateQuizRequest>().ReverseMap();
         }
     }
 }

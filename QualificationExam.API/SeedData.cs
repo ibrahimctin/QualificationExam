@@ -1,10 +1,4 @@
-﻿using Microsoft.AspNetCore.Identity;
-using QualificationExam.Domain.Constants;
-using QualificationExam.Domain.Enitities.Identity;
-using QualificationExam.Infrastructure;
-
-
-namespace QualificationExam.API
+﻿namespace QualificationExam.API
 {
     public static class SeedData
     {

@@ -1,6 +1,4 @@
-﻿using System.Text.Json.Serialization;
-
-namespace QualificationExam.API.Base
+﻿namespace QualificationExam.API.Base
 {
     public class ApiResponse<T>
     {

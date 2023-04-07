@@ -1,7 +1,4 @@
-﻿using QualificationExam.Application.Contracts.Identity;
-using System.Security.Claims;
-
-namespace QualificationExam.API.Middlewares
+﻿namespace QualificationExam.API.Middlewares
 {
     public static class CurrentUserExtensions
     {

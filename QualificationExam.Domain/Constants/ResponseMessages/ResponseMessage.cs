@@ -9,5 +9,9 @@
         public const string DeletedSuccessfully = "Deleted Successfully";
         public const string UpdatedSuccessfully = "Updated Successfully";
         public const string QuizNotFound = "This Quiz Not Found";
+        public const string QuestionNotFound = "This Question Not Found";
+        public const string QuizQuestionLimitReached = "Quiz Question Limit Reached";
+
+
     }
 }

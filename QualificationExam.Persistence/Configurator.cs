@@ -10,6 +10,8 @@
               typeof(WriteRepository<>));
             services.AddScoped<IQuizReadRepository, QuizReadRepository>();
             services.AddScoped<IQuizWriteRepository, QuizWriteRepository>();
+            services.AddScoped<IQuestionReadRepository, QuestionReadRepository>();
+            services.AddScoped<IQuestionWriteRepository, QuestionWriteRepository>();
             return services;
         }
     }

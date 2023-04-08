@@ -19,7 +19,7 @@
             if (result is not null)
             {
                 var resultPayload = _mapper.Map<QuizDetailResponse>(result);
-                return ServiceResponse.CreateSuccess(ResponseMessage.AddedSuccessfully,resultPayload);
+                return ServiceResponse.CreateSuccess(nameof(GetQuizDetailQueryHandler),resultPayload);
             }
             return ServiceResponse.CreateError(ResponseMessage.AddedFailed);
         }

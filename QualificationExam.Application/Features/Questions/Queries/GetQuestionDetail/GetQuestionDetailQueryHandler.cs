@@ -21,7 +21,7 @@
             if (result is not null)
             {
                 var resultPayload = _mapper.Map<QuestionDetailResponse>(result);
-                return ServiceResponse.CreateSuccess(ResponseMessage.AddedSuccessfully, resultPayload);
+                return ServiceResponse.CreateSuccess(nameof(GetQuestionDetailQueryHandler), resultPayload);
             }
             return ServiceResponse.CreateError(ResponseMessage.AddedFailed);
         }

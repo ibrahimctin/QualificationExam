@@ -11,3 +11,5 @@ global using Microsoft.Extensions.DependencyInjection;
 global using QualificationExam.Persistence.Repositories;
 global using QualificationExam.Persistence.Repositories.Quizzes;
 global using QualificationExam.Persistence.Repositories.Questions;
+global using QualificationExam.Persistence.Repositories.QuestionOptions;
+

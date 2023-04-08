@@ -21,7 +21,7 @@
             var questionResult = await _questionReadRepository.GetByIdAsync(request.UpdateQuestionRequest.Id);
             if (questionResult is null)
             {
-                throw new ApplicationLayerException(ResponseMessage.QuizNotFound);
+                throw new ApplicationLayerException(ResponseMessage.QuestionNotFound);
             }
             var questionPayload = _mapper.Map(request.UpdateQuestionRequest, questionResult);
             var updatedQuestion = _questionWriteRepository.Update(questionPayload);

@@ -11,6 +11,7 @@
         public const string QuizNotFound = "This Quiz Not Found";
         public const string QuestionNotFound = "This Question Not Found";
         public const string QuizQuestionLimitReached = "Quiz Question Limit Reached";
+        public const string QuestionOptionNotFount = "This Question Option Not Found";
 
 
     }

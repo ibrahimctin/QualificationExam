@@ -12,6 +12,8 @@
             services.AddScoped<IQuizWriteRepository, QuizWriteRepository>();
             services.AddScoped<IQuestionReadRepository, QuestionReadRepository>();
             services.AddScoped<IQuestionWriteRepository, QuestionWriteRepository>();
+            services.AddScoped<IQuestionOptionReadRepository, QuestionOptionReadRepository>();
+            services.AddScoped<IQuestionOptionWriteRepository, QuestionOptionWriteRepository>();
             return services;
         }
     }

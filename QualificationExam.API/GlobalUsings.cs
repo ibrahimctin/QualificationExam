@@ -28,3 +28,8 @@ global using QualificationExam.Identity.Configurators;
 global using QualificationExam.Infrastructure;
 global using QualificationExam.Persistence;
 global using QualificationExam.Domain.Enitities.Identity;
+global using QualificationExam.Application.DTOs.QuestionOptions.RequestDtos;
+global using QualificationExam.Application.Features.QuestionOptions.Commands.CreateQuestionOption;
+global using QualificationExam.Application.Features.QuestionOptions.Commands.DeleteQuestionOption;
+global using QualificationExam.Application.Features.QuestionOptions.Commands.UpdateQuestionOption;
+global using QualificationExam.Application.Features.QuestionOptions.Queries;
